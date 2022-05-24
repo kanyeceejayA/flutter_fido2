@@ -16,6 +16,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 export 'signing_result.dart';
 export 'registration_result.dart';
+export 'package:local_auth_ios/local_auth_ios.dart';
 
 class Fido2Flutter {
 	final LocalAuthentication auth = LocalAuthentication();
