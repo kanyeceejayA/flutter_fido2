@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use, unused_catch_clause
+
 library flutter_fido2;
 import 'dart:async';
 import 'dart:convert';
@@ -61,7 +63,7 @@ class Fido2Flutter {
         rpName = (rpName == '')? rpDomain : rpName;
 		    String localizedReason = "Register on $rpName as  $userId ";
         RegistrationResult result;
-        var data;
+        String? data;
 		bool valid = await auth.authenticate(
             localizedReason:localizedReason,
             options: options
