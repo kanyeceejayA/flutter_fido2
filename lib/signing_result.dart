@@ -1,3 +1,4 @@
+library flutter_fido2;
 // Corresponds to AuthenticatorAssertionResponse
 class SigningResult {
   SigningResult(this.credentialId, this.signedChallenge, this.userId);

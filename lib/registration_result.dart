@@ -1,3 +1,4 @@
+library flutter_fido2;
 // Corresponds to AuthenticatorAttestationResponse
 class RegistrationResult {
   RegistrationResult(this.credentialId, this.signedChallenge, this.publicKey);
