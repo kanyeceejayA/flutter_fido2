@@ -1,4 +1,5 @@
-// Corresponds to AuthenticatorAttestationResponse
+/// Result returned by authenticator after registration.
+/// Corresponds to AuthenticatorAttestationResponse
 class RegistrationResult {
   RegistrationResult(this.credentialId, this.signedChallenge, this.publicKey);
 

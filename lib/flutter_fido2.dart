@@ -20,7 +20,7 @@ export 'api_service.dart';
 export 'auth_server.dart';
 export 'package:local_auth_ios/local_auth_ios.dart';
 
-class Fido2Flutter {
+class FlutterFido2 {
 	final LocalAuthentication auth = LocalAuthentication();
 
 	// Create storage
