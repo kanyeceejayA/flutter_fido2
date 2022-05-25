@@ -233,9 +233,7 @@ You also need to update your `AndroidManifest.xml` to state your use of authenti
 
 <manifest>
 ```
-* If you are using `FlutterActivity` directly, change it to
-`FlutterFragmentActivity` in your `AndroidManifest.xml`.
-* If you are using a custom activity, update your `MainActivity.java`:
+finally, you need to change the `FlutterActivity` into a `FlutterFragmentActivity`.If you are using a Java, update your `MainActivity.java`:
 
     ```java
     import io.flutter.embedding.android.FlutterFragmentActivity;
@@ -244,7 +242,7 @@ You also need to update your `AndroidManifest.xml` to state your use of authenti
     }
     ```
 
-    or MainActivity.kt:
+    or if you are using kotlin, update MainActivity.kt:
 
     ```kotlin
     import io.flutter.embedding.android.FlutterFragmentActivity
@@ -254,14 +252,8 @@ You also need to update your `AndroidManifest.xml` to state your use of authenti
     ```
 
 ##  6. <a name='SeeAlso'></a>See Also
-
+- [Mojaloop android flutter lib](https://github.com/mojaloop/contrib-fido2-flutter-lib)
 - [W3 WebAuthn Spec](https://www.w3.org/TR/webauthn/#webauthn-relying-party)
 - [Mozilla Web Authentication Docs](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
 - [Fido2ApiClient API Reference](https://developers.google.com/android/reference/com/google/android/gms/fido/fido2/Fido2ApiClient)
 - [Introduction to WebAuthn API](https://medium.com/@herrjemand/introduction-to-webauthn-api-5fd1fb46c285)
-
-
-
-##  7. <a name='TODO'></a>TODO
-
-- add flutter example
