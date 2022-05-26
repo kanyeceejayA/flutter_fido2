@@ -62,6 +62,7 @@ class FlutterFido2 {
           useErrorDialogs: true,
           stickyAuth: true,
           biometricOnly: true,
+          sensitiveTransaction: true
         ),
 	}) async{
 
