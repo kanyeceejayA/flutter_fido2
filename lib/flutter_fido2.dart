@@ -16,8 +16,8 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 export 'signing_result.dart';
 export 'registration_result.dart';
-export 'api_service.dart';
-export 'auth_server.dart';
+// export 'api_service.dart';
+// export 'auth_server.dart';
 export 'package:local_auth_ios/local_auth_ios.dart';
 
 class FlutterFido2 {
