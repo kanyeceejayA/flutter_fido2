@@ -82,9 +82,11 @@ Initiates the registration process.  This launches the FIDO client which authent
 
 ```dart
 import 'package:flutter_fido2/flutter_fido2.dart';
+//instantiate the class
+final fido2 = FlutterFido2();
 
 //This returns a RegistrationResult
-RegistrationResult result = await register();
+RegistrationResult result = await fido2.register();
 //you can access and send this information on to your server.
 result.credentialId;
 result.signedChallenge;
@@ -125,7 +127,31 @@ This launches the FIDO client which authenticates the user whose credentials wer
 | `userId`  | `String`   | An identifier for the user.                                                                                                                   |
 | `options`  | `Object`  | Any extra options you would like to add.                                                                                                      |
 
-####  3.2.2. <a name='ReturnValues:-1'></a>Return Values:
+####  3.2.2. <a name='Example:-1'></a>Example:
+
+```dart
+import 'package:flutter_fido2/flutter_fido2.dart';
+//instantiate the class
+final fido2 = FlutterFido2();
+
+//This returns a SigningResult
+SigningResult result = await fido2.signChallenge(
+              challenge: 'randomchallenge123', // comes from your server
+              allowCredentials: request['credentials'] as List<String>, //saved credentials for the user from your server
+              userId: 'username', //the identifier for your user used during registration
+              rpDomain: rpDomain, // the domain name of your server (Relying Party)
+              options: const AuthenticationOptions(
+                useErrorDialogs: true, // use error dialogs that are inbuilt
+                biometricOnly: true, //use only in-built biometric authenticator
+              ),
+//you can access and send this information on to your server for verification of the signed challenge.
+result.credentialId;
+result.signedChallenge;
+result.userId;
+
+```
+
+####  3.2.3. <a name='ReturnValues:-1'></a>Return Values:
 
 The function returns a  `SigningResult` object with the following fields:
 
