@@ -3,6 +3,7 @@
 library flutter_fido2;
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 import 'dart:math';
 import 'signing_result.dart';
 import 'package:flutter/services.dart';
@@ -65,7 +66,10 @@ class FlutterFido2 {
           sensitiveTransaction: true
         ),
 	}) async{
-
+        options = (Platform.isWindows)? const AuthenticationOptions(
+          useErrorDialogs: true,
+          stickyAuth: true,
+        ) : options;
         rpName = (rpName == '')? rpDomain : rpName;
 		    String localizedReason = "Register on $rpName as  $userId ";
         RegistrationResult result;
@@ -133,6 +137,10 @@ class FlutterFido2 {
           biometricOnly: true
         ),
 	}) async{
+    options = (Platform.isWindows)? const AuthenticationOptions(
+          useErrorDialogs: true,
+          stickyAuth: true,
+        ) : options;
 		String reasonEnd = (userId == '')? '':' as $userId';
 		String localizedReason = "Log in to  $rpDomain"+reasonEnd;
         final SigningResult result;
