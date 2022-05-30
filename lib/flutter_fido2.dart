@@ -145,7 +145,7 @@ class FlutterFido2 {
 		String localizedReason = "Log in to  $rpDomain"+reasonEnd;
     final SigningResult result;
     String? data;
-    var i = 0;
+    var i = -1; // start below 0 so that the first item is index 0.
 
 		bool valid = await auth.authenticate(
             localizedReason:localizedReason,
