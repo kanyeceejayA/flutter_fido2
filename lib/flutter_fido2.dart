@@ -143,8 +143,9 @@ class FlutterFido2 {
         ) : options;
 		String reasonEnd = (userId == '')? '':' as $userId';
 		String localizedReason = "Log in to  $rpDomain"+reasonEnd;
-        final SigningResult result;
-        String? data;
+    final SigningResult result;
+    String? data;
+    var i = 0;
 
 		bool valid = await auth.authenticate(
             localizedReason:localizedReason,
@@ -155,7 +156,7 @@ class FlutterFido2 {
     for (var currentId in allowCredentials) {
 		  data = await storage.read(key: currentId);
       
-
+      i = i+1;
       if(data != null) break;
     }
 
@@ -165,7 +166,7 @@ class FlutterFido2 {
 		ECPrivateKey privateKey = ECPrivateKey.fromString(savedCreds['privateKey']);
 		String signedChallenge = privateKey.createSignature(challenge);
 		
-		result = SigningResult(allowCredentials[0], signedChallenge, savedCreds['userId']);
+		result = SigningResult(allowCredentials[i], signedChallenge, savedCreds['userId']);
 		return result;
   	}
 	
