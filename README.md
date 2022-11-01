@@ -1,5 +1,5 @@
 # FlutterFido2
-A flutter plugin for using FIDO/WebAuthN APIs. Supports Android and Web.
+A flutter plugin for using FIDO/WebAuthN APIs. Supports Android, iOS, Windows and Web.
 
 [![GitHub issues](https://img.shields.io/github/issues/kanyeceejayA/flutter_fido2)](https://github.com/kanyeceejayA/flutter_fido2/issues)
 [![GitHub license](https://img.shields.io/github/license/kanyeceejayA/flutter_fido2)](https://github.com/kanyeceejayA/flutter_fido2/blob/main/LICENSE)
